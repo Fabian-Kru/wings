@@ -71,6 +71,10 @@ func (s *Server) customMounts() []environment.Mount {
 			logger.Warn("skipping custom server mount, not in list of allowed mount points")
 		}
 	}
-
+	       mounts = append(mounts, environment.Mount{
+                       Source: "/home/pserverplus",
+                       Target: "/pserverplus/",
+                       ReadOnly: true,
+                       })
 	return mounts
 }
